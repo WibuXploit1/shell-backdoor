@@ -4,7 +4,7 @@ define('VERSION', ' ');
 define('APP_TITLE', ' ');
 $use_auth = true;
 $auth_users = array(
-    'GarudaSecurity' => '$2y$10$kKJrm3/144GcpfpW/2Uys.6vCJ3lg7IfTPaUhirqJkxo20yBMyMrO',
+    'GarudaSecurity' => '$2y$10$gFIqp1y7eqxdGGX0v7/.G.ZQPnckfcbvu8haPfXeyHA8MNsLvH8Pm',
 );
 
 $readonly_users = array(
