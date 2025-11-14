@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portal Ekonomi UMKM - Template</title>
+  <meta name="description" content="Template sederhana untuk presentasi dan promosi UMKM: profil, produk, data ekonomi, dan sumber daya.">
+  <style>
+    /* Reset sederhana */
+    :root{
+      --accent:#1f8a70;
+      --muted:#6b7280;
+      --card:#ffffff;
+      --bg:#f6f8fb;
+      --glass: rgba(255,255,255,0.6);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#eef2f7);color:#0f172a;line-height:1.5}
+    .container{max-width:1100px;margin:28px auto;padding:18px}
+
+    header{display:flex;align-items:center;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:10px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav{margin-left:auto}
+    nav a{margin-left:14px;color:var(--muted);text-decoration:none;font-weight:600}
+
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:20px;margin-top:18px}
+    .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+    .hero-left h1{margin:0 0 12px;font-size:28px}
+    .meta{color:var(--muted);margin-bottom:12px}
+    .cta{display:flex;gap:10px}
+    .btn{padding:10px 14px;border-radius:10px;cursor:pointer;border:0;font-weight:700}
+    .btn-primary{background:var(--accent);color:white}
+    .btn-ghost{background:transparent;border:1px solid #e6eef0;color:var(--accent)}
+
+    .stats{display:flex;gap:12px;margin-top:16px}
+    .stat{flex:1;padding:12px;border-radius:10px;background:linear-gradient(135deg,#ffffff, #fbfcff);text-align:center}
+    .stat h3{margin:0;font-size:18px}
+    .stat p{margin:6px 0 0;color:var(--muted)}
+
+    section{margin-top:18px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+
+    .product img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+    .product h4{margin:8px 0 4px}
+    .product p{margin:0;color:var(--muted);font-size:14px}
+
+    footer{margin-top:28px;padding:18px;text-align:center;color:var(--muted);font-size:14px}
+
+    /* responsive */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:520px){
+      .grid-3{grid-template-columns:1fr}
+      nav{display:none}
+      .logo{width:48px;height:48px}
+      .hero-left h1{font-size:22px}
+    }
+
+    /* print */
+    @media print{
+      body{background:white}
+      .btn, nav, header .logo{display:none}
+      .container{margin:0;padding:0}
+      .card{box-shadow:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">UM</div>
+        <div>
+          <div style="font-weight:800;">Portal Ekonomi UMKM</div>
+          <div style="font-size:13px;color:var(--muted)">Mendukung kewirausahaan lokal</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#profil">Profil</a>
+        <a href="#produk">Produk</a>
+        <a href="#data">Data</a>
+        <a href="#sumber">Sumber</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <div class="card hero-left">
+        <h1>Memperkuat UMKM melalui informasi, pemasaran, dan akses modal</h1>
+        <div class="meta">Template ini cocok untuk koperasi, desa wirausaha, incubator, atau kelompok usaha mikro.</div>
+        <div class="cta">
+          <button class="btn btn-primary" onclick="window.print()">Cetak ringkasan</button>
+          <button class="btn btn-ghost" onclick="document.getElementById('produk').scrollIntoView({behavior:'smooth'})">Lihat Produk</button>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <h3>120</h3>
+            <p>UMKM Terdaftar</p>
+          </div>
+          <div class="stat">
+            <h3>+35%</h3>
+            <p>Peningkatan Pendapatan (Tahun)</p>
+          </div>
+          <div class="stat">
+            <h3>Rp 250 jt</h3>
+            <p>Modal Tersalurkan</p>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="card">
+        <h3>Ringkasan Program</h3>
+        <p style="color:var(--muted);font-size:14px">Program pendampingan: pelatihan pemasaran digital, pembukuan sederhana, akses pembiayaan mikro, dan pameran produk lokal.</p>
+        <hr style="margin:12px 0;opacity:.6">
+        <h4>Kontak Koordinator</h4>
+        <p style="margin:6px 0;color:var(--muted)">Nama: Siti Rahma<br>Telp: 0812-3456-7890<br>Email: kontak@umkm.local</p>
+        <div style="margin-top:10px;background:var(--glass);padding:10px;border-radius:8px;font-size:13px;color:var(--muted)">Catatan: Update data setiap bulan agar laporan akurat.</div>
+      </aside>
+    </div>
+
+    <section id="profil" class="card">
+      <h2>Profil UMKM</h2>
+      <p style="color:var(--muted)">Deskripsi singkat: UMKM lokal yang bergerak di bidang makanan olahan, kerajinan tangan, dan jasa digital. Visi: Meningkatkan kesejahteraan ekonomi komunitas melalui usaha kreatif.</p>
+
+      <div class="grid-3" style="margin-top:12px">
+        <div class="card">
+          <h3>Visi & Misi</h3>
+          <p style="color:var(--muted)">Visi: Sejahtera dan mandiri. Misi: Pelatihan, pemasaran, serta pendampingan administratif.</p>
+        </div>
+        <div class="card">
+          <h3>Struktur</h3>
+          <p style="color:var(--muted)">Koordinator, bagian pemasaran, keuangan sederhana, dan logistik.</p>
+        </div>
+        <div class="card">
+          <h3>Jam Operasional</h3>
+          <p style="color:var(--muted)">Senin - Sabtu, 08:00 - 17:00</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="produk">
+      <h2>Produk Unggulan</h2>
+      <div class="grid-3">
+        <article class="card product">
+          <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1080&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Produk 1">
+          <h4>Keripik Singkong Pedas</h4>
+          <p>Rasa pedas gurih, kemasan 250g — siap ekspor lokal.</p>
+        </article>
+        <article class="card product">
+          <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=1080&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Produk 2">
+          <h4>Anyaman Rotan</h4>
+          <p>Kerajinan tangan, cocok sebagai hadiah dan interior.</p>
+        </article>
+        <article class="card product">
+          <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?q=80&w=1080&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Produk 3">
+          <h4>Snack Kacang Madu</h4>
+          <p>Produk sehat dengan bahan lokal, sertifikat halal tersedia.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="data" class="card">
+      <h2>Data & Indikator</h2>
+      <p style="color:var(--muted)">Gunakan tabel sederhana ini untuk mencatat omzet, jumlah karyawan, dan kebutuhan modal.</p>
+      <table style="width:100%;border-collapse:collapse;margin-top:12px">
+        <thead style="text-align:left;background:#f3f6f8">
+          <tr>
+            <th style="padding:8px">Bulan</th>
+            <th style="padding:8px">Omzet (Rp)</th>
+            <th style="padding:8px">Karyawan</th>
+            <th style="padding:8px">Keterangan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:8px">Januari</td>
+            <td style="padding:8px">12.500.000</td>
+            <td style="padding:8px">4</td>
+            <td style="padding:8px">Puncak permintaan musiman</td>
+          </tr>
+          <tr>
+            <td style="padding:8px">Februari</td>
+            <td style="padding:8px">10.200.000</td>
+            <td style="padding:8px">4</td>
+            <td style="padding:8px">Stabil</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="sumber">
+      <div class="grid-2">
+        <div class="card">
+          <h3>Sumber Daya & Pelatihan</h3>
+          <ul style="color:var(--muted)">
+            <li>Pelatihan pembukuan sederhana (Excel/MYOB dasar)</li>
+            <li>Pemasaran digital: foto produk & marketplace</li>
+            <li>Pengemasan dan sertifikasi (halal, P-IRT)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Aksi Cepat</h3>
+          <ol style="color:var(--muted)">
+            <li>Inventaris produk dan foto</li>
+            <li>Buat akun di marketplace lokal</li>
+            <li>Ajukan modal mikro / bergabung dengan koperasi</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Dibuat untuk mendukung UMKM lokal • Template sederhana yang dapat diedit
+    </footer>
+  </div>
+</body>
+  </html>
+  
